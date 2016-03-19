@@ -118,7 +118,11 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    throw new Error('Not implemented');
+    var a = [];
+    while(a.length < count){
+        a.push(value);
+    }
+    return a.join('');
 }
 
 /**
@@ -134,7 +138,8 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+    var result = str.replace(value, "");
+    return result;
 }
 
 /**
