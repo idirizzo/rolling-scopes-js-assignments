@@ -154,7 +154,9 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    throw new Error('Not implemented');
+    var result = str.replace("<", "");
+    var result = result.replace(">", "");
+    return result;
 }
 
 
@@ -169,7 +171,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    throw new Error('Not implemented');
+    return str.toUpperCase();
 }
 
 /**
@@ -183,7 +185,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    throw new Error('Not implemented');
+    return str.split(';');
 }
 
 /**
@@ -210,7 +212,13 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+    let horisontal="─";
+	let vertical="│";
+	let vertical_right="│\n";
+	let space=" ";
+	let space_repeat = space.repeat(width-2);
+	let center_line = vertical + space_repeat + vertical_right;	
+    return "┌" + horisontal.repeat(width-2) + "┐\n" + center_line.repeat(height-2) + "└" + horisontal.repeat(width-2) + "┘\n";
 }
 
 
@@ -230,7 +238,13 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    var map = [];
+    var buf = '';
+    for (var z = 0; z < str.length; z++) {
+        var c = str.charAt(z);
+        buf  = buf + (c in map ? map[c] : c);
+    }
+    return buf;
 }
 
 /**
@@ -247,7 +261,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+    return typeof value === "string" || value instanceof String;
 }
 
 
@@ -276,7 +290,7 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+   return "A234567891JQK".indexOf(value[0]) + (13 * "♣♦♥♠".indexOf(value[value.length - 1]));
 }
 
 
