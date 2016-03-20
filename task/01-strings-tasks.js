@@ -238,13 +238,9 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    var map = [];
-    var buf = '';
-    for (var z = 0; z < str.length; z++) {
-        var c = str.charAt(z);
-        buf  = buf + (c in map ? map[c] : c);
-    }
-    return buf;
+    return str.replace(/[A-Za-z]/g, function(a) {
+    return String.fromCharCode( a.charCodeAt(0) + ( a.toUpperCase() <= "M" ? 13 : -13 ) );
+  } );
 }
 
 /**
