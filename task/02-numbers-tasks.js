@@ -22,7 +22,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-    var x=width*height;
+    var x = width * height ;
     return x;
 }
 
