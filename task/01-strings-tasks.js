@@ -69,11 +69,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    
-    return value.slice(7, -1);
-   
-    
-    }
+   return value.slice(7, -1);
+}
 
 
 /**
@@ -137,8 +134,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    var result = str.replace(value, "");
-    return result;
+    return str.replace(value, "");
 }
 
 /**
