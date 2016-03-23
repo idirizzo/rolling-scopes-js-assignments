@@ -73,7 +73,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    return Math.hypot(x2 - x1, y2 - y1);
 }
 
 /**
@@ -111,7 +111,7 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    return Math.acos((x1 * x2 + y1 * y2) / (Math.sqrt(x1 * x1 + y1 * y1 ) * Math.sqrt(x2 * x2 + y2 * y2 )));
 }
 
 /**
@@ -181,7 +181,9 @@ function getParallelipidedDiagonal(a,b,c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
+    pow = Math.pow(10, pow);
+    return Math.round(num / pow) * pow;
+       
 }
 
 /**
@@ -201,9 +203,10 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(n) {
-    throw new Error('Not implemented');
+function isPrime(n) { 
+    return (n/2 != Math.round(n/2))||(false);
 }
+
 
 /**
  * Tries to convert value to number and returns it if conversion was successfull;
