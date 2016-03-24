@@ -204,8 +204,14 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) { 
-    return (n/2 != Math.round(n/2))||(false);
-}
+    if (n == 1 || n == 2){
+		return true;
+	}		
+	for (var c=2;c<n-1;c++){
+		if(n % c == 0) { return false};
+		}
+	return true;
+ }
 
 
 /**
