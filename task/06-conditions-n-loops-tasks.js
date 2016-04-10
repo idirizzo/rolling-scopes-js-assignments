@@ -30,11 +30,14 @@
  *
  */
 function getFizzBuzz(num) {
-    if ((num % 3) === 0) {
-        return ((num % 5) === 0) ? 'FizzBuzz' : 'Fizz';
-    } else {
-        return ((num % 5) === 0) ? 'Buzz' : num;
-    }
+    let x = "";
+    if (num % 3 === 0)
+ x += "Fizz";
+    if (num % 5 === 0)
+ x += "Buzz";
+    if (x === "")
+ x = num;
+    return x;
 }
 
 
